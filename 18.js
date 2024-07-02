@@ -2,23 +2,29 @@
 
 //  first 100 tak kasie print kare 
 
-for(let i=0; i<=100; i++){
-  let z = fun(i);
-  if(z!==undefined){
-    console.log(z)
-
-  }
-  
-        function fun(value){for(let j=2; j<100; j++){
-            let rem=value%j
-            if(rem===0){
-                return 
-            }
-
-       
+function checkPrime(value){
+  for(let j=2; j<value; j++){
+    let rem =value%j
+    if(rem===0){
+      return false;
     }
-    return value
+  }
+  return true
 }
-    
+
+function solve(){
+  let a=[];
+  for(let i=0; ;i++){
+    if(checkPrime(i)===true)
+      a.push(i)
+  
+    if(a.length>=100){
+      break
+    }
+  }
+  return a
 }
+
+let z=solve()
+console.log(z)
 
